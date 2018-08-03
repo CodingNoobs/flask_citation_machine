@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Book</a>
+        <a href="/trans-book">Translated Book</a>
+        <a href="/article">Artcile</a>
+    </nav>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.first_name.label }}
+        {{ form.first_name(size=20) }}
+        <br>
+        {{ form.last_name.label }}
+        {{ form.last_name(size=20) }} 
+        <br>
+        {{ form.publisher.label }}
+        {{ form.publisher(size=20) }}
+        <br>
+        {{ form.book_title.label }}
+        {{ form.book_title(size=20) }}
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if first_name %}
+    <p>{{ last_name }}, {{ first_name }}:
+        <span class="slant">{{ book_title}}</span>
+        ({{ publisher }})
+    </p>
+    {% endif %}
+</body>
+</html>
