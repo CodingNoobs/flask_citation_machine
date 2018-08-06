@@ -1,5 +1,4 @@
-/venv
-entry_test.py
-gui_test.py
-.vscode
-.__pycache__
+*venv
+*.vscode
+*.__pycache__
+*.pyc
