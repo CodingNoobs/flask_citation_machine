@@ -1,3 +1,4 @@
 /venv
 entry_test.py
 gui_test.py
+.vscode

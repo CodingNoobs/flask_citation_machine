@@ -12,9 +12,13 @@
         <a href="/">Book</a>
         <a href="/trans-book">Translated Book</a>
     </nav>
+    <!-- Our form that we sent from the route. -->
     <form action="" method="post">
+        <!-- Render this hidden tag for CSRF protectin and correct form validation. -->
         {{ form.hidden_tag() }}
+        <!-- Render the form label. -->
         {{ form.first_name.label }}
+        <!-- Render the form field. Set an optional length of the text box. -->
         {{ form.first_name(size=20) }}
         <br>
         {{ form.last_name.label }}
@@ -26,12 +30,21 @@
         {{ form.book_title.label }}
         {{ form.book_title(size=20) }}
         <br>
+        {{ form.year.label }}
+        {{ form.year(size=20) }}
+        <br>
         <input type="submit" value="Submit">
     </form>
-    {% if first_name %}
+
+    <!-- Check if a key exists.
+         If it hasnt, then don't render this bit.
+         If it does, then render this bit.
+    -->
+    {% if year %}
+    <!-- This is where we can render variables sent from the route into our specified layout. -->
     <p>{{ last_name }}, {{ first_name }}:
         <span class="slant">{{ book_title}}</span>
-        ({{ publisher }})
+        ({{ publisher }}), {{ year }}
     </p>
     {% endif %}
 </body>
